@@ -7,11 +7,11 @@ class Hostctl < Formula
 
   if OS.mac?
     url "https://github.com/guumaster/hostctl/releases/download/v0.5.4/hostctl_0.5.4_macOS_64-bit.tar.gz"
-    sha256 "ddf25b500d131ebea1643718fc5af3a25b9b044953f0d592bb732db5f1a357bc"
+    sha256 "ea8c0c5255b4452ad1ff92b3eb9ad301f836627745f2ecb738662e011d3b59d2"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/guumaster/hostctl/releases/download/v0.5.4/hostctl_0.5.4_linux_64-bit.tar.gz"
-      sha256 "d989d23dc9815dd87a3e348b1a2d9bc6e6c40823a04f78d39eef4f411f0b0fb0"
+      sha256 "c54003f2ce8b9c1d614164b91c64b6ab7def60a33f6465daedb6c2f1c1a5cc3b"
     end
   end
 
