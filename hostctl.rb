@@ -2,16 +2,16 @@
 class Hostctl < Formula
   desc "Your dev tool to manage /etc/hosts like a pro"
   homepage "https://github.com/guumaster/hostctl"
-  version "1.0.9"
+  version "1.0.10"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/guumaster/hostctl/releases/download/v1.0.9/hostctl_1.0.9_macOS_64-bit.tar.gz"
-    sha256 "c2fb6b87a2de3b341a06c7ac49ccdf4e100954742b1f60a7f6b1f8bbdbdc2bc3"
+    url "https://github.com/guumaster/hostctl/releases/download/v1.0.10/hostctl_1.0.10_macOS_64-bit.tar.gz"
+    sha256 "6bb3ef1a43b46580f6b5f73fb69fd95a25b2dda56f0d54371927b01eedd14f69"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.0.9/hostctl_1.0.9_linux_64-bit.tar.gz"
-      sha256 "9bbf73dfef4778bd6d3ccd4d524225a3c683a50dfce1dc3c8ea2c4993b1974cd"
+      url "https://github.com/guumaster/hostctl/releases/download/v1.0.10/hostctl_1.0.10_linux_64-bit.tar.gz"
+      sha256 "6b753dfa112594ef7a1f8fbafca0f6da2f4a04c68283e76ceabf1105be75ff68"
     end
   end
 
