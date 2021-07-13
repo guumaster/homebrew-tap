@@ -11,14 +11,14 @@ class Hostctl < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/guumaster/hostctl/releases/download/v1.0.15/hostctl_1.0.15_macOS_64-bit.tar.gz"
-      sha256 "636d4bf52612f423d54f3bbb5a79f2e4eecd64cd4ceaeca6adf90cf5331d1b04"
+      sha256 "4413f127b6c605a6414c3c4d56f43c1d5821f65b809227847048c5ac408d7ba3"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/guumaster/hostctl/releases/download/v1.0.15/hostctl_1.0.15_linux_64-bit.tar.gz"
-      sha256 "b7ca67ec544aab8525988367416441d78d4a3c9d10983caaf31e43e973d9f59d"
+      sha256 "0eddc456c80d652ed7a014141403089c4c688f60b32cc6611541fb2b9643fbb5"
     end
   end
 
