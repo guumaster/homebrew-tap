@@ -5,20 +5,24 @@
 class Hostctl < Formula
   desc "Your dev tool to manage /etc/hosts like a pro"
   homepage "https://github.com/guumaster/hostctl"
-  version "1.1.0"
+  version "1.1.1"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.0/hostctl_1.1.0_macOS_64-bit.tar.gz"
-      sha256 "602e8610d3d8de4adb58cc9294683b87e2a795cae635f6135a5291a9fca6c157"
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_macOS_64-bit.tar.gz"
+      sha256 "68d1a17a6192f9128d35c43c084678e18d1f09a728caaeb6e0bf12af65708086"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.0/hostctl_1.1.0_linux_64-bit.tar.gz"
-      sha256 "68b3ad82317291a8bb1ed36eb43595c32dde4228bd19312d5dcd9f712103bf66"
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_linux_64-bit.tar.gz"
+      sha256 "85951c9aaba3761befcf280786bd7dc98d13a8413f394721db3f76079e59bd24"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_linux_arm64.tar.gz"
+      sha256 "41e4e263a4c438697064975fa8ee3f6cf93aa46b7a6cfcf9d3efb6a465a0fc00"
     end
   end
 
