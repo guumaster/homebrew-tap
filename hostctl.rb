@@ -6,7 +6,6 @@ class Hostctl < Formula
   desc "Your dev tool to manage /etc/hosts like a pro"
   homepage "https://github.com/guumaster/hostctl"
   version "1.1.1"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
