@@ -13,6 +13,10 @@ class Hostctl < Formula
       url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_macOS_64-bit.tar.gz"
       sha256 "68d1a17a6192f9128d35c43c084678e18d1f09a728caaeb6e0bf12af65708086"
     end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_linux_arm64.tar.gz"
+      sha256 "41e4e263a4c438697064975fa8ee3f6cf93aa46b7a6cfcf9d3efb6a465a0fc00"
+    end
   end
 
   on_linux do
