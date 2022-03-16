@@ -5,32 +5,44 @@
 class Hostctl < Formula
   desc "Your dev tool to manage /etc/hosts like a pro"
   homepage "https://github.com/guumaster/hostctl"
-  version "1.1.1"
+  version "1.1.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_macOS_64-bit.tar.gz"
-      sha256 "68d1a17a6192f9128d35c43c084678e18d1f09a728caaeb6e0bf12af65708086"
+    url "https://github.com/guumaster/hostctl/releases/download/v1.1.2/hostctl_1.1.2_macOS_64-bit.tar.gz"
+    sha256 "52dbc7b0539ce0b401b4cbf1779753a3627eed997455d9a45c60c629ba620824"
+
+    def install
+      bin.install "hostctl"
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_macOS_64-bit.tar.gz"
-      sha256 "68d1a17a6192f9128d35c43c084678e18d1f09a728caaeb6e0bf12af65708086"
+
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Hostctl
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_linux_64-bit.tar.gz"
-      sha256 "85951c9aaba3761befcf280786bd7dc98d13a8413f394721db3f76079e59bd24"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.1/hostctl_1.1.1_linux_arm64.tar.gz"
-      sha256 "41e4e263a4c438697064975fa8ee3f6cf93aa46b7a6cfcf9d3efb6a465a0fc00"
-    end
-  end
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.2/hostctl_1.1.2_linux_arm64.tar.gz"
+      sha256 "864f0d1d6bf00f39f6dda0ef5f66500f93e95e689f905fa1d2911a9af44e3e4c"
 
-  def install
-    bin.install "hostctl"
+      def install
+        bin.install "hostctl"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.2/hostctl_1.1.2_linux_64-bit.tar.gz"
+      sha256 "a69c0abe184a1b721ac463bd55315cd119973321b7019f08063d72e48a40966e"
+
+      def install
+        bin.install "hostctl"
+      end
+    end
   end
 
   def caveats; <<~EOS
