@@ -5,39 +5,39 @@
 class Hostctl < Formula
   desc "Your dev tool to manage /etc/hosts like a pro"
   homepage "https://github.com/guumaster/hostctl"
-  version "1.1.2"
+  version "1.1.3"
 
   on_macos do
-    url "https://github.com/guumaster/hostctl/releases/download/v1.1.2/hostctl_1.1.2_macOS_64-bit.tar.gz"
-    sha256 "52dbc7b0539ce0b401b4cbf1779753a3627eed997455d9a45c60c629ba620824"
+    if Hardware::CPU.intel?
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.3/hostctl_1.1.3_macOS_64-bit.tar.gz"
+      sha256 "34e7a04286fe2b68ef81e4a94270c8e082fb3717be5f9ca7e2469ceade32c142"
 
-    def install
-      bin.install "hostctl"
+      def install
+        bin.install "hostctl"
+      end
     end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Hostctl
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.3/hostctl_1.1.3_macOS_arm64.tar.gz"
+      sha256 "585897bc975a6c060e9a42ab26a331b5e321e56cde7d50271a3a7ad0122d4392"
+
+      def install
+        bin.install "hostctl"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.2/hostctl_1.1.2_linux_arm64.tar.gz"
-      sha256 "864f0d1d6bf00f39f6dda0ef5f66500f93e95e689f905fa1d2911a9af44e3e4c"
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.3/hostctl_1.1.3_linux_arm64.tar.gz"
+      sha256 "eeabc7f88d3e35c3d69ee41c4695fc413cf419e40ed6e8bb4d753a63b7b6b768"
 
       def install
         bin.install "hostctl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/guumaster/hostctl/releases/download/v1.1.2/hostctl_1.1.2_linux_64-bit.tar.gz"
-      sha256 "a69c0abe184a1b721ac463bd55315cd119973321b7019f08063d72e48a40966e"
+      url "https://github.com/guumaster/hostctl/releases/download/v1.1.3/hostctl_1.1.3_linux_64-bit.tar.gz"
+      sha256 "1dbcbd415b330e599601b6e7a27be6078bde9cc8ea1c09da4d4781f0b8349718"
 
       def install
         bin.install "hostctl"
